@@ -14,6 +14,8 @@ class Admission < ApplicationRecord
   has_many :observations
   has_many :symptoms
 
+  validates :moment, presence: true
+
   def date
     moment.strftime('%B %d, %Y')
   end

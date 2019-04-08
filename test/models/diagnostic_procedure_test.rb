@@ -13,7 +13,33 @@
 require 'test_helper'
 
 class DiagnosticProcedureTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @patient = patients(:one)
+  end
+
+  test 'valid diagnostic procesure' do
+    dp = @patient.diagnostic_procedures.build(
+      description: 'cool description',
+      moment: Time.zone.now
+    )
+
+    assert dp.valid?
+  end
+
+  test 'invalid diagnostic procedure description and moment cant be blank' do
+    dp = @patient.diagnostic_procedures.build(
+      description: 'cool description',
+      moment: ''
+    )
+
+    refute dp.valid?
+
+    dp = @patient.diagnostic_procedures.build(
+      description: '',
+      moment: Time.zone.now
+    )
+
+    refute dp.valid?
+  end
+
 end

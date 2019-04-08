@@ -18,7 +18,23 @@
 require 'test_helper'
 
 class PatientTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @patient = patients(:one)
+  end
+
+  test 'a valid patient' do
+    assert @patient.valid?
+  end
+
+  test 'an invalid patient, first_name, last_name cant be blank' do
+    assert @patient.valid?
+    @patient.first_name = ''
+
+    refute @patient.valid?
+
+    @patient.first_name = 'Name'
+    @patient.last_name  = ''
+    refute @patient.valid?
+  end
 end
+

@@ -17,7 +17,43 @@
 require 'test_helper'
 
 class MedicationOrderTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @patient = patients(:one)
+  end
+
+  test 'valid medication order' do
+    mo = @patient.medication_orders.build(
+      name: 'Paracetamol',
+      dosage: 500.00,
+      necessity: 'overcome pain',
+    )
+
+    assert mo.valid?
+  end
+
+  test 'invalid medication order' do
+    mo = @patient.medication_orders.build(
+      name: '',
+      dosage: 500.00,
+      necessity: 'overcome pain',
+    )
+
+    refute mo.valid?
+
+    mo = @patient.medication_orders.build(
+      name: 'Paracetamol',
+      dosage: nil,
+      necessity: 'overcome pain',
+    )
+
+    refute mo.valid?
+
+    mo = @patient.medication_orders.build(
+      name: 'Paracetamol',
+      dosage: 500.00,
+      necessity: '',
+    )
+
+    refute mo.valid?
+  end
 end

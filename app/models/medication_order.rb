@@ -15,11 +15,13 @@
 #
 
 class MedicationOrder < ApplicationRecord
-  belongs_to :order_frequency
+  belongs_to :order_frequency, optional: true
   belongs_to :patient
 
   alias_attribute :frequency, :order_frequency
 
   enum unit: [:mg]
   enum route: [:PO, :IM, :SC]
+
+  validates :name, :dosage, :necessity, presence: true
 end

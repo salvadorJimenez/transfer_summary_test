@@ -15,8 +15,12 @@ class AdmissionTest < ActiveSupport::TestCase
     @admission = admissions(:one)
   end
 
-  test 'valid admission' do
-    binding.pry
-    assert true
+  test 'moment cant be blank' do
+    assert @admission.valid?
+    refute @admission.moment.blank?
+
+    @admission.moment = ''
+
+    refute @admission.valid?
   end
 end

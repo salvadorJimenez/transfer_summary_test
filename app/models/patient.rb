@@ -31,6 +31,8 @@ class Patient < ApplicationRecord
 
   enum gender: [:male, :female, :other]
 
+  validates :first_name, :last_name, presence: true
+
   def full_name
     "#{first_name} #{middle_name} #{last_name}"
   end
@@ -41,7 +43,7 @@ class Patient < ApplicationRecord
 
   def medications_string
     arr_medications = medications.map do |medication|
-      "#{medication.name} #{medication.dosage}#{mediation.unit} #{mediation.route} #{medication.frequency.value}#{medication.frequency.unit} to #{medication.necessity}"
+      "#{medication.name} #{medication.dosage}#{medication.unit} #{medication.route} #{medication.frequency.value}#{medication.frequency.unit} to #{medication.necessity}"
     end
     arr_medications.to_sentence
   end
@@ -54,7 +56,7 @@ class Patient < ApplicationRecord
   end
 
   def treatments_string
-    arr_treatments = medications.map do |tr|
+    arr_treatments = treatments.map do |tr|
       "#{tr.description} to #{tr.necessity}"
     end
     arr_treatments.to_sentence

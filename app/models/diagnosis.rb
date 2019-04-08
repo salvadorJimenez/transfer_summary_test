@@ -15,4 +15,6 @@
 
 class Diagnosis < ApplicationRecord
   belongs_to :diagnosable, polymorphic: true
+
+  validates :code, :description, presence: true
 end
