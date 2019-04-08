@@ -1,0 +1,10 @@
+<h2>Summary</h2>
+<%= render 'facility_form', facility: @facility, patient: @patient %>
+
+<br>
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <%= button_to "Print", "#", onclick: "window.print();return false;", class: "btn btn-primary"%>
+  </div>
+</div>

@@ -30,4 +30,33 @@ class Patient < ApplicationRecord
   alias_attribute :medications, :medication_orders
 
   enum gender: [:male, :female, :other]
+
+  def full_name
+    "#{first_name} #{middle_name} #{last_name}"
+  end
+
+  def age
+    ((Time.zone.now - dob.to_time) / 1.year.seconds).floor + 1
+  end
+
+  def medications_string
+    arr_medications = medications.map do |medication|
+      "#{medication.name} #{medication.dosage}#{mediation.unit} #{mediation.route} #{medication.frequency.value}#{medication.frequency.unit} to #{medication.necessity}"
+    end
+    arr_medications.to_sentence
+  end
+
+  def diagnostic_procedures_string
+    arr_dp = diagnostic_procedures.map do |dp|
+      "#{dp.description} on #{dp.date} at #{dp.time}"
+    end
+    arr_dp.to_sentence
+  end
+
+  def treatments_string
+    arr_treatments = medications.map do |tr|
+      "#{tr.description} to #{tr.necessity}"
+    end
+    arr_treatments.to_sentence
+  end
 end

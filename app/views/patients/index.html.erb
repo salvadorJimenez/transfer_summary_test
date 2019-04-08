@@ -1,0 +1,15 @@
+<h2>List of patients</h2>
+
+<table class="table-condensed">
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <%= render 'patient_row_table',  patient: patient%>
+    <%end%>
+  </tbody>
+</table>

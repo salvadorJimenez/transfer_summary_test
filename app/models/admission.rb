@@ -13,4 +13,12 @@ class Admission < ApplicationRecord
   has_many :diagnoses, as: :diagnosable
   has_many :observations
   has_many :symptoms
+
+  def date
+    moment.strftime('%B %d, %Y')
+  end
+
+  def time
+    moment.strftime('%I:%M %P')
+  end
 end

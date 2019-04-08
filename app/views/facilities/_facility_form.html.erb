@@ -1,0 +1,55 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th colspan="4">Emergency Transfer Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th colspan="4">Transferring Facility</th>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <div>Name:</div>
+          <%= facility.name %>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <th colspan="4" scope="row">Patient Information</th>
+    </tr>
+    <tr>
+      <td>
+        <span>First name:</span><br>
+        <%= patient.first_name %>
+      </td>
+      <td>
+        <span>Middle name:</span><br>
+        <%= patient&.middle_name %>
+      </td>
+      <td>
+        <span>Last name:</span><br>
+        <%= patient.last_name %>
+      </td>
+      <td>
+        <span>Medical record:</span><br>
+        <%= patient.mr%>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <p>
+          <span>Summary</span><br><br>
+          This <%= patient.age %> years old <%= patient.gender %> was admitted to <%= facility.name %> on <%= patient.admission.date %> at <%= patient.admission.time %> due to
+          <%= patient.admission.diagnoses.pluck(:description).to_sentence %>. The observed symptoms on admission were <%= patient.admission.symptoms.pluck(:description).to_sentence %>.<%= patient.admission.observations.pluck(:description).to_sentence %>. <br> <br>
+          Upon asking about known allergies, the patient disclosed <%= patient.allergies.pluck(:description).to_sentence %>. Upon asking about chronic conditions, the patient disclosed
+          <%= patient.chronic_conditions.pluck(:description).to_sentence %>. The patient was administered with <%= patient.medications_string  %>, revealing
+          <%= patient.diagnoses.pluck(:description).to_sentence %> <br> <br>
+
+          The staff performed <%= patient.diagnostic_procedures_string %>, revealing <%= patient.diagnoses.pluck(:description).to_sentence %>. Our team proceeded to <%= patient.treatments_string %> <br> <br>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
