@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: admissions
+#
+#  id         :integer          not null, primary key
+#  moment     :datetime         not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  moment: 2019-04-04 22:16:42
+
+two:
+  moment: 2019-03-03 04:16:42
+
+three:
+  moment: 2019-02-02 22:16:42
+
+four:
+  moment: 2019-01-01 04:11:42

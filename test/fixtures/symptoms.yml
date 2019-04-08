@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: symptoms
+#
+#  id           :integer          not null, primary key
+#  description  :text             not null
+#  admission_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: severe pain
+  admission: one
+
+two:
+  description: swelling
+  admission: one
+
+three:
+  description: limited bending of the joint
+  admission: one
+
+four:
+  description: severe pain
+  admission: two
+
+five:
+  description: extremelly pain
+  admission: three
+
+six:
+  description: soft pain
+  admission: four

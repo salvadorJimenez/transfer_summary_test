@@ -1,0 +1,64 @@
+# == Schema Information
+#
+# Table name: diagnoses
+#
+#  id               :integer          not null, primary key
+#  coding_system    :string
+#  code             :string           not null
+#  description      :text
+#  type             :string           default("Diagnosis"), not null
+#  diagnosable_type :string
+#  diagnosable_id   :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coding_system: '101'
+  code: S82
+  description: a fracture of upper end of the right tibia
+  diagnosable: one (Admission)
+
+two:
+  coding_system: 101A
+  code: S82
+  description: a closed fracture in the right tibia
+  diagnosable: one (Patient)
+
+three:
+  coding_system: '101'
+  code: S82
+  description: a fracture on the neck
+  diagnosable: two (Admission)
+
+four:
+  coding_system: 101A
+  code: S82
+  description: a closed fracture on the neck
+  diagnosable: two (Patient)
+
+five:
+  coding_system: '101'
+  code: S82
+  description: a fracture on the rigth foot
+  diagnosable: three (Admission)
+
+six:
+  coding_system: 101A
+  code: S82
+  description: a closed fracture in the left foot
+  diagnosable: three (Patient)
+
+seven:
+  coding_system: '101'
+  code: S82
+  description: a fracture hand
+  diagnosable: four (Admission)
+
+eight:
+  coding_system: 101A
+  code: S82
+  description: a closed fracture of the rigth hand
+  diagnosable: four (Patient)

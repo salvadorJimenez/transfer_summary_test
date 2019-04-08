@@ -13,6 +13,10 @@
 #  updated_at       :datetime         not null
 #
 
-class Diagnosis < ApplicationRecord
-  belongs_to :diagnosable, polymorphic: true
+require 'test_helper'
+
+class DiagnosisTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

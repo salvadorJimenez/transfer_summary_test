@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: observations
+#
+#  id           :integer          not null, primary key
+#  description  :text             not null
+#  moment       :datetime         not null
+#  admission_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: No soft tissues were damaged
+  moment: 2019-04-08 02:17:46
+  admission: one
+
+two:
+  description: No soft tissues were damaged
+  moment: 2019-04-08 02:17:46
+  admission: two
+
+three:
+  description: No soft tissues were damaged
+  moment: 2019-04-08 02:17:46
+  admission: two
+
+four:
+  description: No soft tissues were damaged
+  moment: 2019-04-08 02:17:46
+  admission: two

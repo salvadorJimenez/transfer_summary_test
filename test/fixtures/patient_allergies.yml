@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: patient_allergies
+#
+#  id         :integer          not null, primary key
+#  patient_id :integer
+#  allergy_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  patient: one
+  allergy: one
+
+two:
+  patient: one
+  allergy: two
+
+four:
+  patient: two
+  allergy: one
+
+five:
+  patient: two
+  allergy: four
+
+six:
+  patient: four
+  allergy: four

@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: treatments
+#
+#  id          :integer          not null, primary key
+#  description :text
+#  necessity   :text
+#  patient_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: temporary bracing the right leg
+  necessity: restrict the motion
+  patient: one
+
+two:
+  description: temporary bracing the left leg
+  necessity: restrict the motion
+  patient: two
+
+three:
+  description: temporary bracing the left arm
+  necessity: restrict the motion
+  patient: three
+
+four:
+  description: temporary bracing the right arm
+  necessity: restrict the motion
+  patient: four

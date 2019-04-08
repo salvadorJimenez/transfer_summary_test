@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: diagnostic_procedures
+#
+#  id          :integer          not null, primary key
+#  description :text             not null
+#  moment      :datetime         not null
+#  patient_id  :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: an exploratory radiography
+  moment: 2018-02-18 17:07:00
+  patient: one
+
+two:
+  description: a chemical bath
+  moment: 2018-02-18 13:04:00
+  patient: two
+
+three:
+  description: an exploratory body revision
+  moment: 2018-02-18 11:02:00
+  patient: three
+
+four:
+  description: a medical revision
+  moment: 2018-02-18 10:30:00
+  patient: four

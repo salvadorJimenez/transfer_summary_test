@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: facilities
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Blue Alps Ski Camp
+
+two:
+  name: Puerta de Hierro
+
+three:
+  name: International Hospital
+
+four:
+  name: International Hospital 2

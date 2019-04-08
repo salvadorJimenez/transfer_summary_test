@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: ovservations
+# Table name: observations
 #
 #  id           :integer          not null, primary key
 #  description  :text             not null
@@ -10,6 +10,10 @@
 #  updated_at   :datetime         not null
 #
 
-class Ovservation < ApplicationRecord
-  belongs_to :admission
+require 'test_helper'
+
+class ObservationTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

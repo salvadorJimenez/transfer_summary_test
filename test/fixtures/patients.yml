@@ -1,0 +1,57 @@
+# == Schema Information
+#
+# Table name: patients
+#
+#  id           :integer          not null, primary key
+#  first_name   :string           not null
+#  middle_name  :string
+#  last_name    :string           not null
+#  mr           :string
+#  dob          :datetime
+#  gender       :integer          default("male"), not null
+#  facility_id  :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  admission_id :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: Thomas
+  last_name: Schudel
+  mr: 30997
+  dob: 1976-04-08 00:00:00
+  gender: 0
+  facility: one
+  admission: one
+
+two:
+  first_name: Kenia
+  middle_name: Cotton
+  last_name: Jenkins
+  mr: 678910
+  dob: 1996-04-08 00:00:00
+  gender: 1
+  facility: two
+  admission: two
+
+three:
+  first_name: Herman
+  middle_name: Ernesto
+  last_name: Sanchez
+  mr: 123454
+  dob: 1986-04-08 00:00:00
+  gender: 0
+  facility: three
+  admission: three
+
+four:
+  first_name: Tania
+  middle_name: Viridiana
+  last_name: Tapia
+  mr: 654321
+  dob: 1989-04-08 00:00:00
+  gender: 2
+  facility: four
+  admission: four

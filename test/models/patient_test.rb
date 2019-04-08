@@ -15,19 +15,10 @@
 #  admission_id :integer
 #
 
-class Patient < ApplicationRecord
-  belongs_to :facility
-  belongs_to :admission
+require 'test_helper'
 
-  has_many :treatments
-  has_many :diagnostic_procedures
-  has_many :patient_allergies
-  has_many :allergies, through: :patient_allergies
-  has_many :chronic_conditions, as: :diagnosable
-  has_many :diagnoses, as: :diagnosable
-  has_many :medication_orders
-
-  alias_attribute :medications, :medication_orders
-
-  enum gender: [:male, :female, :other]
+class PatientTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

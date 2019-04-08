@@ -14,12 +14,10 @@
 #  updated_at         :datetime         not null
 #
 
-class MedicationOrder < ApplicationRecord
-  belongs_to :order_frequency
-  belongs_to :patient
+require 'test_helper'
 
-  alias_attribute :frequency, :order_frequency
-
-  enum unit: [:mg]
-  enum route: [:PO, :IM, :SC]
+class MedicationOrderTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

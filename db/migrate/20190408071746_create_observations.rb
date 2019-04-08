@@ -1,6 +1,6 @@
-class CreateOvservations < ActiveRecord::Migration[5.2]
+class CreateObservations < ActiveRecord::Migration[5.2]
   def change
-    create_table :ovservations do |t|
+    create_table :observations do |t|
       t.text :description, null: false
       t.datetime :moment, null: false
       t.references :admission, foreign_key: true

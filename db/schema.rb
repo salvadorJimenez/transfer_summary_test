@@ -26,8 +26,9 @@ ActiveRecord::Schema.define(version: 2019_04_08_074853) do
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "coding_system"
-    t.string "code"
+    t.string "code", null: false
     t.text "description"
+    t.string "type", default: "Diagnosis", null: false
     t.string "diagnosable_type"
     t.integer "diagnosable_id"
     t.datetime "created_at", null: false
@@ -64,20 +65,20 @@ ActiveRecord::Schema.define(version: 2019_04_08_074853) do
     t.index ["patient_id"], name: "index_medication_orders_on_patient_id"
   end
 
-  create_table "order_frequencies", force: :cascade do |t|
-    t.string "value", null: false
-    t.integer "unit", default: 0, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "ovservations", force: :cascade do |t|
+  create_table "observations", force: :cascade do |t|
     t.text "description", null: false
     t.datetime "moment", null: false
     t.integer "admission_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admission_id"], name: "index_ovservations_on_admission_id"
+    t.index ["admission_id"], name: "index_observations_on_admission_id"
+  end
+
+  create_table "order_frequencies", force: :cascade do |t|
+    t.string "value", null: false
+    t.integer "unit", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patient_allergies", force: :cascade do |t|
@@ -91,8 +92,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_074853) do
 
   create_table "patients", force: :cascade do |t|
     t.string "first_name", null: false
-    t.string "middle_name", null: false
-    t.string "last_name"
+    t.string "middle_name"
+    t.string "last_name", null: false
     t.string "mr"
     t.datetime "dob"
     t.integer "gender", default: 0, null: false

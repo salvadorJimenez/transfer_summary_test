@@ -8,9 +8,15 @@
 #  updated_at :datetime         not null
 #
 
-class Admission < ApplicationRecord
-  has_one :patient
-  has_many :diagnoses, as: :diagnosable
-  has_many :observations
-  has_many :symptoms
+require 'test_helper'
+
+class AdmissionTest < ActiveSupport::TestCase
+  def setup
+    @admission = admissions(:one)
+  end
+
+  test 'valid admission' do
+    binding.pry
+    assert true
+  end
 end
